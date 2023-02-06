@@ -1,6 +1,6 @@
 {
     "roots": [
-      "policies"
+      "loantest" , "users", "groups", "rules"
     ],
     "metadata": {
       "required_builtins": {
