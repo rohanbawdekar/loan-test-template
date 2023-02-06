@@ -1,0 +1,42 @@
+{
+    "users": [
+        {
+            "userId": "mumbai_user1",
+            "groupId": "mumbai_group"
+        },
+        {
+            "userId": "pune_user1",
+            "groupId": "pune_group"
+        }
+    ],
+    "groups": [
+        {
+            "groupId": "mumbai_group",
+            "users": [
+                {
+                    "userId": "mumbai_user1"
+                }
+            ]
+        },
+        {
+            "groupId": "pune_group",
+            "users": [
+                {
+                    "userId": "pune_user1"
+                }
+            ]
+        }
+    ],
+    "rules": [
+        {
+            "lowerAmountLimit": 0,
+            "upperAmountLimit": 50000,
+            "approvalGroup": "pune_group"
+        },
+        {
+            "lowerAmountLimit": 50000,
+            "upperAmountLimit": 100000,
+            "approvalGroup": "mumbai_group"
+        }
+    ]
+}
