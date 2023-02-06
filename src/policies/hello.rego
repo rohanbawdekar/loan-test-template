@@ -1,20 +1,24 @@
-package policies.hello
+package loan.abac
 
-# default to a "closed" system, 
-# only grant access when explicitly granted
+import future.keywords.contains
+import future.keywords.if
+import future.keywords.in
 
-default allowed = false
-default visible = false
-default enabled = false
+default approve := false
 
-allowed {
-    input.role == "web-admin"
+approval_group contains rule.approvalGroup if {
+	some rule in res.get("data").data.rules
+	input.amount >= rule.lowerAmountLimit
+	input.amount < rule.upperAmountLimit
 }
 
-enabled {
-    visible
+approver contains group.users[_].userId if {
+	some group in res.get("data").data.groups
+	group.groupId == approval_group[_]
 }
 
-visible {
-    input.app == "web-console"
+approve if {
+	approver[_] == input.user
 }
+
+
