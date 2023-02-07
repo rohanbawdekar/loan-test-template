@@ -6,8 +6,8 @@ import future.keywords.in
 
 default approve := false
 
-approval_group := data.groups
+approval_group := data.group
 
 approve if {
-  input.user.id == input.resource.userId
+  input.user.properties.groups[_] == approval_group
 }
