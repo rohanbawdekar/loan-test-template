@@ -5,18 +5,3 @@ import future.keywords.if
 import future.keywords.in
 
 default approve := false
-
-approval_group contains rule.approvalGroup if {
-	some rule in data.rules
-	input.amount >= rule.lowerAmountLimit
-	input.amount < rule.upperAmountLimit
-}
-
-approver contains group.users[_].userId if {
-	some group in data.groups
-	group.groupId == approval_group[_]
-}
-
-approve if {
-	approver[_] == input.userId
-}
