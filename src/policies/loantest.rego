@@ -34,27 +34,27 @@ approve_3 if {
 
 approve_r1 if {
 
-  input.user.properties.groups[_] == data.rules2["r1"].approvalGroup
+  input.user.properties.groups[_] == data.rules_2["r1"].approvalGroup
 }
 
 approve_r11 if {
 
-  input.user.properties.groups[_] == data.rules2[r1].approvalGroup
+  input.user.properties.groups[_] == data.rules_2[r1].approvalGroup
 }
 
 
 approve_r2 if {
 
-  input.user.properties.groups[_] == data.rules2["r2"].approvalGroup
+  input.user.properties.groups[_] == data.rules_2["r2"].approvalGroup
 }
 
 approve_r21 if {
 
-  input.user.properties.groups[_] == data.rules2[r2].approvalGroup
+  input.user.properties.groups[_] == data.rules_2[r2].approvalGroup
 }
 
 approve_r3 if {
 
   some i
-  input.user.properties.groups[_] == data.rules2[i].approvalGroup
+  input.user.properties.groups[_] == data.rules_2[i].approvalGroup
 }
