@@ -6,12 +6,8 @@ import future.keywords.in
 
 default approve := false
 
-approval_group contains rule.approvalGroup if {
-	some rule in data.rules
-	input.resource.amount >= rule.lowerAmountLimit
-	input.resource.amount < rule.upperAmountLimit
-}
+approval_group := data.groups
 
 approve if {
-input.user.id == input.resource.userId
+  input.user.id == input.resource.userId
 }
