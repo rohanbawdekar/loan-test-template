@@ -5,8 +5,6 @@ import future.keywords.if
 import future.keywords.in
 
 default approve := false
-default approve_2 := false
-default approve_3 := false
 
 
 approve if {
@@ -25,10 +23,14 @@ approval_group contains data.rules[i].approvalGroup if {
 
 
 approve_2 if {
-  some[i]
+  some i
   input.user.properties.groups[_] == approval_group[i]
 }
 
 approve_3 if {
   input.user.properties.groups[_] == approval_group[_]
+}
+
+approve_4 if {
+  input.user.properties.groups[_] == approval_group
 }
