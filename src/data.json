@@ -1,28 +1,28 @@
 {
     "users": [
         {
-            "userId": "mumbai_user1",
-            "groupId": "mumbai_group"
+            "userId": "mumbai_user_2",
+            "groupId": "mumbai_approval_group"
         },
         {
-            "userId": "pune_user1",
-            "groupId": "pune_group"
+            "userId": "pune_user_2",
+            "groupId": "pune_approval_group"
         }
     ],
     "groups": [
         {
-            "groupId": "mumbai_group",
+            "groupId": "mumbai_approval_group",
             "users": [
                 {
-                    "userId": "mumbai_user1"
+                    "userId": "mumbai_user_2"
                 }
             ]
         },
         {
-            "groupId": "pune_group",
+            "groupId": "pune_approval_group",
             "users": [
                 {
-                    "userId": "pune_user1"
+                    "userId": "pune_user_2"
                 }
             ]
         }
@@ -31,12 +31,12 @@
         {
             "lowerAmountLimit": 0,
             "upperAmountLimit": 50000,
-            "approvalGroup": "pune_group"
+            "approvalGroup": "pune_approval_group"
         },
         {
             "lowerAmountLimit": 50000,
             "upperAmountLimit": 100000,
-            "approvalGroup": "mumbai_group"
+            "approvalGroup": "mumbai_approval_group"
         }
     ]
 }

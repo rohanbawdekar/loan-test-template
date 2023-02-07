@@ -5,3 +5,7 @@ import future.keywords.if
 import future.keywords.in
 
 default approve := false
+
+approve if {
+input.user.id == input.resource.userId
+}
