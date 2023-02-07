@@ -23,7 +23,7 @@
            "upperAmountLimit": 100000,
            "approvalGroup": "mumbai_approval_group"
        }
-    }
+    },
     "group": "mumbai_approval_group"
 
 }
