@@ -10,4 +10,6 @@ approve if {
 
   some i
   input.user.properties.groups[_] == data.rules[i].approvalGroup
+  input.resource.amount >= data.rules[i].lowerAmountLimit
+  input.resource.amount < data.rules[i].upperAmountLimit
 }
