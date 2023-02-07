@@ -1,29 +1,14 @@
 {
-
     "rules": [
        {
           "lowerAmountLimit": 0,
           "upperAmountLimit": 50000,
-          "approvalGroup": "pune_approval_group"
+          "approvalGroup": "bangalore_approval_group"
       },
-     {
+      {
           "lowerAmountLimit": 50000,
           "upperAmountLimit": 100000,
           "approvalGroup": "mumbai_approval_group"
       }
-    ],
-    "rules_2" : {
-      "r1" :  {
-          "lowerAmountLimit": 0,
-          "upperAmountLimit": 50000,
-          "approvalGroup": "pune_approval_group"
-      },
-      "r2" : {
-           "lowerAmountLimit": 50000,
-           "upperAmountLimit": 100000,
-           "approvalGroup": "mumbai_approval_group"
-       }
-    },
-    "group": "mumbai_approval_group"
-
+    ]
 }
