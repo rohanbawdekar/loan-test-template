@@ -3,12 +3,17 @@
        {
           "lowerAmountLimit": 0,
           "upperAmountLimit": 50000,
-          "approvalGroup": "bangalore_approval_group"
+          "approvalLevel": "branch_office"
       },
       {
           "lowerAmountLimit": 50000,
           "upperAmountLimit": 100000,
-          "approvalGroup": "mumbai_approval_group"
+          "approvalLevel": "zonal_office"
+      },
+      {
+          "lowerAmountLimit": 100000,
+          "upperAmountLimit": 200000,
+          "approvalLevel": "central_office"
       }
     ]
 }
