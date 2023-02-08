@@ -1,4 +1,22 @@
 {
+  "rules": [
+     {
+        "lowerAmountLimit": 0,
+        "upperAmountLimit": 50000,
+        "approvalLevel": "branch_office"
+    },
+    {
+        "lowerAmountLimit": 50000,
+        "upperAmountLimit": 100000,
+        "approvalLevel": "zonal_office"
+    },
+    {
+        "lowerAmountLimit": 100000,
+        "upperAmountLimit": 200000,
+        "approvalLevel": "central_office"
+    }
+  ] ,
+
   "branches" : [
       {
          "branchId": "mumbai_branch_office",
@@ -38,24 +56,8 @@
            "approvalGroup": "karnataka_approval_group",
            "parentBranch": "india_central_office"
        }
-  ],
+  ]
 
-    "rules": [
-       {
-          "lowerAmountLimit": 0,
-          "upperAmountLimit": 50000,
-          "approvalLevel": "branch_office"
-      },
-      {
-          "lowerAmountLimit": 50000,
-          "upperAmountLimit": 100000,
-          "approvalLevel": "zonal_office"
-      },
-      {
-          "lowerAmountLimit": 100000,
-          "upperAmountLimit": 200000,
-          "approvalLevel": "central_office"
-      }
-    ]
+
 
 }
