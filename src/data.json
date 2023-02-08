@@ -1,4 +1,45 @@
 {
+  "branches" : [
+      {
+         "branchId": "mumbai_branch_office",
+         "branchType": "branch_office",
+         "zonalBranch": "maharashtra_zonal_office",
+         "centralBranch": "india_central_office",
+         "approvalGroup": "mumbai_approval_group",
+         "parentBranch": "maharashtra_zonal_office"
+     },
+     {
+          "branchId": "maharashtra_zonal_office",
+          "branchType": "zonal_office",
+          "zonalBranch": "maharashtra_zonal_office",
+          "centralBranch": "india_central_office",
+          "approvalGroup": "maharashtra_approval_group",
+          "parentBranch": "india_central_office"
+      },
+      {
+           "branchId": "india_central_office",
+           "branchType": "central_office",
+           "centralBranch": "india_central_office",
+           "approvalGroup": "india_approval_group"
+       },
+       {
+          "branchId": "bangalore_branch_office",
+          "branchType": "branch_office",
+          "zonalBranch": "karnataka_zonal_office",
+          "centralBranch": "india_central_office",
+          "approvalGroup": "bangalore_approval_group",
+          "parentBranch": "karnataka_zonal_office"
+      },
+      {
+           "branchId": "karnataka_zonal_office",
+           "branchType": "zonal_office",
+           "zonalBranch": "karnataka_zonal_office",
+           "centralBranch": "india_central_office",
+           "approvalGroup": "karnataka_approval_group",
+           "parentBranch": "india_central_office"
+       }
+  ],
+
     "rules": [
        {
           "lowerAmountLimit": 0,
@@ -16,4 +57,5 @@
           "approvalLevel": "central_office"
       }
     ]
+
 }
