@@ -23,7 +23,7 @@
          "branchType": "branch_office",
          "zonalBranch": "maharashtra_zonal_office",
          "centralBranch": "india_central_office",
-         "approvalGroup": "sidekick",
+         "approvalGroup": "mumbai_group",
          "parentBranch": "maharashtra_zonal_office"
      },
      {
@@ -31,21 +31,21 @@
           "branchType": "zonal_office",
           "zonalBranch": "maharashtra_zonal_office",
           "centralBranch": "india_central_office",
-          "approvalGroup": "evil_genius",
+          "approvalGroup": "maharashtra_group",
           "parentBranch": "india_central_office"
       },
       {
            "branchId": "india_central_office",
            "branchType": "central_office",
            "centralBranch": "india_central_office",
-           "approvalGroup": "admin"
+           "approvalGroup": "india_group"
        },
        {
           "branchId": "bangalore_branch_office",
           "branchType": "branch_office",
           "zonalBranch": "karnataka_zonal_office",
           "centralBranch": "india_central_office",
-          "approvalGroup": "looser",
+          "approvalGroup": "bangalore_group",
           "parentBranch": "karnataka_zonal_office"
       },
       {
@@ -53,7 +53,7 @@
            "branchType": "zonal_office",
            "zonalBranch": "karnataka_zonal_office",
            "centralBranch": "india_central_office",
-           "approvalGroup": "squanch",
+           "approvalGroup": "karnataka_group",
            "parentBranch": "india_central_office"
        }
   ]
