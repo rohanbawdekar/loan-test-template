@@ -59,12 +59,12 @@ approvalBranch if {
 
 approver_relations = [ u | u := ds.relation({
   "subject": {"key": approval_group[_], "type" : "group" },
-  "relation": {"name": "member", "object_type": "user"}
+  "relation": {"name": "member", "object_type": "group"}
 }) ]
 
 approver_relations_2 = [ u | u := ds.relation({
   "subject": {"key": input.resource.groupId, "type" : "group" },
-  "relation": {"name": "member", "object_type": "user"}
+  "relation": {"name": "member", "object_type": "group"}
 }) ]
 
 approvers = [
