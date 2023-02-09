@@ -40,6 +40,7 @@ approval_group contains data.branches[i].approvalGroup if {
 	approval_branch[_] == data.branches[i].branchId
 }
 
+
 approve if {
   input.user.properties.groups[_] == approval_group[_]
 }
@@ -55,6 +56,24 @@ approvalGroup if {
 approvalBranch if {
   input.resource.approvalBranch == approval_branch[_]
 }
+
+approver_relations = [ u | u := ds.relation({
+  "subject": {"key": approval_group[_], "type" : "group" },
+  "relation": {"name": "member", "object_type": "user"}
+}) ]
+
+approver_relations_2 = [ u | u := ds.relation({
+  "subject": {"key": approval_group[_], "type" : "group" },
+  "relation": {"name": "member", "object_type": "user"}
+}) ]
+
+approvers = [
+  u | u := ds.object({"id": approver_relations.results[_].object.id})
+]
+
+approvers_2 = [
+  u | u := ds.object({"id": approver_relations.results[_].object.id})
+]
 
 approve_user if {
   ds.check_relation({"object": {
@@ -74,21 +93,10 @@ approve_user if {
 }
 
 
+approve_user_2 if {
+  input.user.id == approvers[_]
+}
 
 approve_user_2 if {
-  ds.check_relation({"object": {
-  "key": input.resource.groupId,
-  "type": "group"
-
-  },
-  "relation": {
-  "name": "member",
-  "object_type": "group"
-  },
-  "subject": {
-  "id": input.resource.userId
-
-
-  }
-  })
+  input.user.id == approvers_2[_]
 }
