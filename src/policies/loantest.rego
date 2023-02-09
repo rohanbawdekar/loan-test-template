@@ -100,3 +100,16 @@ approve_user_2 if {
 approve_user_3 if {
   input.user.userId == approvers_2[_]
 }
+
+group_rels = ds.relation({
+  "subject": {"id": input.resource.userId},
+  "relation": {"name": "member", "object_type": "group"}
+})
+
+groups = [
+  g | g := ds.object({"id": group_rels[_].object.id})
+]
+
+groups_res if {
+  input.resource.groupId == groups[_]
+}
