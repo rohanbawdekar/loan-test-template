@@ -59,41 +59,24 @@ approvalBranch if {
 approve_user if {
   ds.check_relation({"object": {
 
-  "key": input.user.id,
-  "type": "user"
+  "key": approval_group[_],
+  "type": "group"
   },
   "relation": {
   "name": "member",
-  "object_type": "user"
+  "object_type": "group"
   },
   "subject": {
+  "id": input.user.id
 
-  "key": approval_group[_],
-  "type": "group"
   }
   })
 }
+
+
 
 approve_user_2 if {
   ds.check_relation({"object": {
-
-  "key": input.resource.userId,
-  "type": "user"
-  },
-  "relation": {
-  "name": "member",
-  "object_type": "user"
-  },
-  "subject": {
-
-  "key": input.resource.groupId,
-  "type": "group"
-  }
-  })
-}
-
-approve_user_3 if {
-  ds.check_relation({"object": {
   "key": input.resource.groupId,
   "type": "group"
 
@@ -103,44 +86,8 @@ approve_user_3 if {
   "object_type": "group"
   },
   "subject": {
-  "key": input.resource.userId,
-  "type": "user"
+  "id": input.resource.userId
 
-  }
-  })
-}
-
-approve_user_4 if {
-  ds.check_relation({"object": {
-
-  "key": input.resource.userId,
-  "type": "user"
-  },
-  "relation": {
-  "name": "member",
-  "object_type": "group"
-  },
-  "subject": {
-
-  "key": input.resource.groupId,
-  "type": "group"
-  }
-  })
-}
-
-approve_user_5 if {
-  ds.check_relation({"object": {
-  "key": input.resource.groupId,
-  "type": "group"
-
-  },
-  "relation": {
-  "name": "member",
-  "object_type": "user"
-  },
-  "subject": {
-  "key": input.resource.userId,
-  "type": "user"
 
   }
   })
