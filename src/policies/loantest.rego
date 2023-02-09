@@ -62,7 +62,7 @@ approver_relations = [ u | u := ds.relation({
   "relation": {"name": "member", "object_type": "user"}
 }) ]
 
-approver_relations_2 = [ u := ds.relation({
+approver_relations_2 = [ u | u := ds.relation({
   "subject": {"key": input.resource.groupId, "type" : "group" },
   "relation": {"name": "member", "object_type": "user"}
 }) ]
