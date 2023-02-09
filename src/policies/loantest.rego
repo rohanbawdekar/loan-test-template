@@ -68,11 +68,11 @@ approver_relations_2 = [ u | u := ds.relation({
 }) ]
 
 approvers = [
-  u | u := ds.object({"id": approver_relations.results[_].object.id})
+  u | u := ds.object({"id": approver_relations[_].object.id})
 ]
 
 approvers_2 = [
-  u | u := ds.object({"id": approver_relations.results[_].object.id})
+  u | u := ds.object({"id": approver_relations_2[_].object.id})
 ]
 
 approve_user if {
