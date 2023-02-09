@@ -8,6 +8,8 @@ default approve := false
 default approvalBranch := false
 default approvalLevel := false
 default approvalGroup := false
+default approve_user := false;
+default approve_user_2 := false;
 
 approval_level contains data.rules[i].approvalLevel if {
  some i
@@ -52,4 +54,40 @@ approvalGroup if {
 
 approvalBranch if {
   input.resource.approvalBranch == approval_branch[_]
+}
+
+approve_user if {
+  ds.check_relation({"object": {
+
+  "key": input.user.id,
+  "type": "user"
+  },
+  "relation": {
+  "name": "member",
+  "object_type": "user"
+  },
+  "subject": {
+
+  "key": approval_group[_],
+  "type": "group"
+  }
+  })
+}
+
+approve_user_2 if {
+  ds.check_relation({"object": {
+
+  "key": input.resource.userId,
+  "type": "user"
+  },
+  "relation": {
+  "name": "member",
+  "object_type": "user"
+  },
+  "subject": {
+
+  "key": input.resource.groupId,
+  "type": "group"
+  }
+  })
 }
