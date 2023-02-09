@@ -62,8 +62,8 @@ approver_relations = [ u | u := ds.relation({
   "relation": {"name": "member", "object_type": "user"}
 }) ]
 
-approver_relations_2 = [ u | u := ds.relation({
-  "subject": {"key": approval_group[_], "type" : "group" },
+approver_relations_2 = [ u := ds.relation({
+  "subject": {"key": input.resource.groupId, "type" : "group" },
   "relation": {"name": "member", "object_type": "user"}
 }) ]
 
@@ -97,6 +97,6 @@ approve_user_2 if {
   input.user.id == approvers[_]
 }
 
-approve_user_2 if {
-  input.user.id == approvers_2[_]
+approve_user_3 if {
+  input.user.userId == approvers_2[_]
 }
