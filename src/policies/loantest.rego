@@ -8,8 +8,8 @@ default approve := false
 default approvalBranch := false
 default approvalLevel := false
 default approvalGroup := false
-default approve_user := false;
-default approve_user_2 := false;
+default approve_user := false
+default approve_user_2 := false
 
 approval_level contains data.rules[i].approvalLevel if {
  some i
