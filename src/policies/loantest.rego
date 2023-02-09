@@ -91,3 +91,57 @@ approve_user_2 if {
   }
   })
 }
+
+approve_user_3 if {
+  ds.check_relation({"object": {
+  "key": input.resource.groupId,
+  "type": "group"
+
+  },
+  "relation": {
+  "name": "member",
+  "object_type": "group"
+  },
+  "subject": {
+  "key": input.resource.userId,
+  "type": "user"
+
+  }
+  })
+}
+
+approve_user_4 if {
+  ds.check_relation({"object": {
+
+  "key": input.resource.userId,
+  "type": "user"
+  },
+  "relation": {
+  "name": "member",
+  "object_type": "group"
+  },
+  "subject": {
+
+  "key": input.resource.groupId,
+  "type": "group"
+  }
+  })
+}
+
+approve_user_5 if {
+  ds.check_relation({"object": {
+  "key": input.resource.groupId,
+  "type": "group"
+
+  },
+  "relation": {
+  "name": "member",
+  "object_type": "user"
+  },
+  "subject": {
+  "key": input.resource.userId,
+  "type": "user"
+
+  }
+  })
+}
