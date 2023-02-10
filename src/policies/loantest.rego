@@ -5,7 +5,7 @@ import future.keywords.if
 import future.keywords.in
 
 default approve := false
-default approve := false
+default approve_2 := false
 
 approval_level contains data.rules[i].approvalLevel if {
  some i
